@@ -18,3 +18,16 @@ function factorial(number) {
   }
   return number * factorial(number - 1);
 }
+// Question 5: Product of an array
+function productOfArray(array) {
+  // base case
+  if (array.length === 1) {
+    return array[array.length - 1];
+  }
+  let lastItem = array[array.length - 1];
+
+  array.pop();
+  // recursion function
+  return lastItem * productOfArray(array);
+}
+console.log("result", productOfArray([1, 2, 3, 10]));
