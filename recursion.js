@@ -30,4 +30,16 @@ function productOfArray(array) {
   // recursion function
   return lastItem * productOfArray(array);
 }
-console.log("result", productOfArray([1, 2, 3, 10]));
+// Question 6: Search JS object
+
+function contains(obj, value) {
+  for (let key in obj) {
+    if (typeof obj[key] === "object") {
+      return contains(obj[key], value);
+    }
+    if (obj[key] === value) {
+      return true;
+    }
+  }
+  return false;
+}
